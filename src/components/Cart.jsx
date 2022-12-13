@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PlateTours from "./PlateTours";
 
 function Cart({
@@ -16,6 +16,10 @@ function Cart({
     const index = event.nativeEvent.target.selectedIndex;
     setTour(tours?.tour[index]);
   }
+
+  useEffect(() => {
+    setTour(tours?.tour[0]);
+  }, []);
 
   console.log(tour);
   return (
